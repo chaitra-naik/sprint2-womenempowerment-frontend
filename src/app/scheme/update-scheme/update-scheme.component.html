@@ -1,0 +1,112 @@
+<!--<div class="col-md-6 offset-md-3">
+    <h3 style="text-align: center;"> Update Employee </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Ngo Name</label>
+            <input type="text" class ="form-control" id = "ngoName"
+                [(ngModel)] = "ngo.ngoName" name = "ngoName">
+        </div>
+    
+        <div class="form-group">
+            <label> NGO Location</label>
+            <input type="text" class ="form-control" id = "ngoLocation"
+                [(ngModel)] = "ngo.ngoLocation" name = "ngoLocation">
+        </div>
+    
+        <div class="form-group">
+            <label> NGO Type</label>
+            <input type="text" class ="form-control" id = "ngoType"
+                [(ngModel)] = "ngo.ngoType" name = "ngoType">
+        </div>
+
+        <div class="form-group">
+            <label> NGO Motive</label>
+            <input type="text" class ="form-control" id = "ngoMotive"
+                [(ngModel)] = "ngo.ngoMotive" name = "ngoMotive">
+        </div>
+
+        <div class="form-group">
+            <label> Donation</label>
+            <input type="text" class ="form-control" id = "donation"
+                [(ngModel)] = "ngo.donation" name = "donation">
+        </div>
+
+        <div class="form-group">
+            <label> NGO Size</label>
+            <input type="text" class ="form-control" id = "ngoSize"
+                [(ngModel)] = "ngo.ngoSize" name = "ngoSize">
+        </div>
+
+        <div class="form-group">
+            <label> NGO Activities</label>
+            <input type="text" class ="form-control" id = "ngoActivities"
+                [(ngModel)] = "ngo.ngoActivities" name = "ngoActivities">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div>-->
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="viewport" content="width=device-width,
+          initial-scale=1.0"/>
+      </head>
+      <body>
+        <div class="container">
+          <h1 class="form-title">Update Scheme</h1>
+          <form (ngSubmit) = "onSubmit()" [formGroup]="schemeform">
+            <div class="main-user-info">
+              <!--<div class="user-input-box">
+                <label>NGO ID</label>
+                <input type="text" class ="form-control" id = "ngoId"
+                [(ngModel)] = "ngo.ngoId" name = "ngoId" formControlName="ngoId">
+    
+              </div>-->
+              <div class="user-input-box">
+                <label>Scheme Name</label>
+                <input type="text" placeholder="Enter Name" class ="form-control" id = "schemeName"
+                [(ngModel)] = "scheme.schemeName" name = "schemeName" formControlName="schemeName" [class.is-invalid]="schemeName.invalid && schemeName.touched">
+                <small [class.d-none]="schemeName.valid || schemeName.untouched" class="text-danger">
+                    Scheme name is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Scheme Type</label>
+                <input type="text" placeholder="Enter type" class ="form-control" id = "schemeType"
+                [(ngModel)] = "scheme.schemeType" name = "schemeType" formControlName="schemeType" [class.is-invalid]="schemeType.invalid && schemeType.touched">
+                <small [class.d-none]="schemeType.valid || schemeType.untouched" class="text-danger">
+                    Scheme Type is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Scheme Launch Date</label>
+                <input type="text" placeholder="Enter date" class ="form-control" id = "schemeLaunchDate"
+                [(ngModel)] = "scheme.schemeLaunchDate" name = "schemeLaunchDate" formControlName="schemeLaunchDate" [class.is-invalid]="schemeLaunchDate.invalid && schemeLaunchDate.touched">
+                <small [class.d-none]="schemeLaunchDate.valid || schemeLaunchDate.untouched" class="text-danger">
+                    Scheme Date is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Scheme Eligibility</label>
+                <input type="text" placeholder="Enter eligibility" class ="form-control" id = "schemeEligibility"
+                [(ngModel)] = "scheme.schemeEligibility" name = "schemeEligibility" formControlName="schemeEligibility" [class.is-invalid]="schemeEligibility.invalid && schemeEligibility.touched">
+                <small [class.d-none]="schemeEligibility.valid || schemeEligibility.untouched" class="text-danger">
+                    Scheme Eligibility is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Scheme Objective</label>
+                <input type="text" placeholder="scheme objective" class ="form-control" id = "schemeObjective"
+                [(ngModel)] = "scheme.schemeObjective" name = "schemeObjective" formControlName="schemeObjective" [class.is-invalid]="schemeObjective.invalid && schemeObjective.touched">
+                <small [class.d-none]="schemeObjective.valid || schemeObjective.untouched" class="text-danger">
+                    Objective is a required field</small>
+              </div>
+            </div>
+            <div class="form-submit-btn">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </body>
+    </html>

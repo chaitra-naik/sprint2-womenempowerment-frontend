@@ -1,0 +1,166 @@
+<!--<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class = "navbar-nav">
+        <li class = "nav-item">
+            <a routerLink="/ngolist" routerLinkActive="active" class="nav-link" >NGO List</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="/addngo" routerLinkActive="active" class="nav-link" >Add NGO</a>
+        </li>
+    </ul>
+</nav>-->
+<!--<div class="col-md-6 offset-md-3">
+    <h3> Create Employee </h3>
+    <form (ngSubmit) = "onSubmit()" [formGroup]="ngoform">
+    
+        <div class="form-group">
+            <label> NGO ID</label>
+            <input type="text" class ="form-control" id = "ngoId"
+                [(ngModel)] = "ngo.ngoId" name = "ngoId" formControlName="ngoId" [class.is-invalid]="ngoId.invalid && ngoId.touched">
+                <small [class.d-none]="ngoId.valid || ngoId.untouched" class="text-danger">
+                    NGO ID is a required field</small>
+        </div>
+    
+        <div class="form-group">
+            <label> NGO Name</label>
+            <input type="text" class ="form-control" id = "ngoName"
+                [(ngModel)] = "ngo.ngoName" name = "ngoName" formControlName="ngoName" [class.is-invalid]="ngoName.invalid && ngoName.touched">
+                <small [class.d-none]="ngoName.valid || ngoName.untouched" class="text-danger">
+                    NGO name is a required field</small>
+        </div>
+    
+        <div class="form-group">
+            <label> NGO Location</label>
+            <input type="text" class ="form-control" id = "ngoLocation"
+                [(ngModel)] = "ngo.ngoLocation" name = "ngoLocation" formControlName="ngoLocation" [class.is-invalid]="ngoLocation.invalid && ngoLocation.touched">
+                <small [class.d-none]="ngoLocation.valid || ngoLocation.untouched" class="text-danger">
+                    NGO location is a required field</small>
+        </div>
+
+        <div class="form-group">
+            <label> NGO Type</label>
+            <input type="text" class ="form-control" id = "ngoType"
+                [(ngModel)] = "ngo.ngoType" name = "ngoType" formControlName="ngoType" [class.is-invalid]="ngoType.invalid && ngoType.touched">
+                <small [class.d-none]="ngoType.valid || ngoType.untouched" class="text-danger">
+                    NGO Type is a required field</small>
+        </div>
+
+        <div class="form-group">
+            <label> NGO Motive</label>
+            <input type="text" class ="form-control" id = "ngoMotive"
+                [(ngModel)] = "ngo.ngoMotive" name = "ngoMotive" formControlName="ngoMotive" [class.is-invalid]="ngoMotive.invalid && ngoMotive.touched">
+                <small [class.d-none]="ngoMotive.valid || ngoMotive.untouched" class="text-danger">
+                    NGO Motive is a required field</small>
+        </div>
+
+        <div class="form-group">
+            <label> Donation</label>
+            <input type="text" class ="form-control" id = "donation"
+                [(ngModel)] = "ngo.donation" name = "donation" formControlName="donation" [class.is-invalid]="donation.invalid && donation.touched">
+                <small [class.d-none]="donation.valid || donation.untouched" class="text-danger">
+                    Donation is a required field</small>
+        </div>
+
+        <div class="form-group">
+            <label> NGO Size</label>
+            <input type="text" class ="form-control" id = "ngoSize"
+                [(ngModel)] = "ngo.ngoSize" name = "ngoSize" formControlName="ngoSize" [class.is-invalid]="ngoSize.invalid && ngoSize.touched">
+                <small [class.d-none]="ngoSize.valid || ngoSize.untouched" class="text-danger">
+                    NGO Size is a required field</small>
+        </div>
+
+        <div class="form-group">
+            <label> NGO Activities</label>
+            <input type="text" class ="form-control" id ="ngoActivities"
+                [(ngModel)] = "ngo.ngoActivities" name ="ngoActivities" formControlName="ngoActivities">
+                <small [class.d-none]="ngoActivities.valid || ngoActivities.untouched" class="text-danger" [class.is-invalid]="ngoActivities.invalid && ngoActivities.touched">
+                    Activities is a required field</small>
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div>-->
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <title>Responsive Registration Form</title>
+        <meta name="viewport" content="width=device-width,
+          initial-scale=1.0"/>
+      </head>
+      <body>
+        <div class="container" style="text-align: center;">
+          <!--<h1 class="form-title">Add Trainee</h1>-->
+          <form (ngSubmit) = "onSubmit()" [formGroup]="traineeform">
+            <div class="main-user-info">
+              <div class="user-input-box">
+                <label>Trainee ID</label>
+                <input type="text" class ="form-control" id = "traineeId"
+                [(ngModel)] = "trainee.traineeId" name = "traineeId" formControlName="traineeId" [class.is-invalid]="traineeId.invalid && traineeId.touched">
+                <small [class.d-none]="traineeId.valid || traineeId.untouched" class="text-danger">
+                    Trainee ID is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>First Name</label>
+                <input type="text" class ="form-control" id = "ngoName"
+                [(ngModel)] = "trainee.firstName" name = "firstName" formControlName="firstName" [class.is-invalid]="firstName.invalid && firstName.touched">
+                <small [class.d-none]="firstName.valid || firstName.untouched" class="text-danger">
+                    First name is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Last Name</label>
+                <input type="text" class ="form-control" id = "lastame"
+                [(ngModel)] = "trainee.lastName" name = "lastName" formControlName="lastName" [class.is-invalid]="lastName.invalid && lastName.touched">
+                <small [class.d-none]="lastName.valid || lastName.untouched" class="text-danger">
+                     Last Name is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Email</label>
+                <input type="text" class ="form-control" id = "email"
+                [(ngModel)] = "trainee.email" name = "email" formControlName="email" [class.is-invalid]="email.invalid && email.touched">
+                <small [class.d-none]="email.valid || email.untouched" class="text-danger">
+                    Email is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Family Info</label>
+                <input type="text" class ="form-control" id = "familyInfo"
+                [(ngModel)] = "trainee.familyInfo" name = "familyInfo" formControlName="familyInfo" [class.is-invalid]="familyInfo.invalid && familyInfo.touched">
+                <small [class.d-none]="familyInfo.valid || familyInfo.untouched" class="text-danger">
+                    Family Info is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Location</label>
+                <input type="text" class ="form-control" id = "location"
+                [(ngModel)] = "trainee.location" name = "location" formControlName="location" [class.is-invalid]="location.invalid && location.touched">
+                <small [class.d-none]="location.valid || location.untouched" class="text-danger">
+                    Location is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Contact</label>
+                <input type="text" class ="form-control" id = "contact"
+                [(ngModel)] = "trainee.contact" name = "contact" formControlName="contact" [class.is-invalid]="contact.invalid && contact.touched">
+                <small [class.d-none]="contact.valid || contact.untouched" class="text-danger">
+                    Contact is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Aadhar Number</label>
+                <input type="text" name="aadharNo" class ="form-control" id ="aadharNo"
+                [(ngModel)] = "trainee.aadharNo"  formControlName="aadharNo" [class.is-invalid]="aadharNo.invalid && aadharNo.touched">
+                <small [class.d-none]="aadharNo.valid || aadharNo.untouched" class="text-danger">
+                    Aadhar Number is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Date of birth</label>
+                <input type="text" name="dob" class ="form-control" id ="dob"
+                [(ngModel)] = "trainee.dob"  formControlName="dob" [class.is-invalid]="dob.invalid && dob.touched">
+                <small [class.d-none]="dob.valid || dob.untouched" class="text-danger">
+                    Date of Birth is a required field</small>
+              </div>
+            </div>
+            <div class="form-submit-btn">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </body>
+    </html>

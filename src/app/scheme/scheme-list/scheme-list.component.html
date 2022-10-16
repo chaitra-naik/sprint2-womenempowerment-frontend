@@ -1,0 +1,34 @@
+<h2></h2>
+<div class="container">
+      <div id="datatable">
+      </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th> Scheme ID</th>
+                <th> Scheme Name </th>
+                <th> Scheme Type </th>
+                <th> Scheme Launch Date</th>
+                <th> Scheme Eligibility</th>
+                <th> Scheme Objective</th>
+                
+                <th> Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let scheme of schemes">
+                <td> {{ scheme.schemeId }} </td>
+                <td> {{ scheme.schemeName }} </td>
+                <td>{{ scheme.schemeType }}</td>
+                <td>{{ scheme.schemeLaunchDate }}</td>
+                <td>{{ scheme.schemeEligibility }}</td>
+                <td>{{ scheme.schemeObjective }}</td>
+                <td>
+                    <button class="btn btn-outline-primary" style="border-radius:10px" (click) = "updateScheme(scheme.schemeId)"> Update</button>
+                    <button class="btn btn-outline-danger" style="margin-left: 10px; border-radius: 10px" (click) = "deleteScheme(scheme.schemeId)"> Delete</button>
+                    <!--<button class="btn btn-outline-primary" style="margin-left: 10px; border-radius: 10px;" (click)="schemeDetails(scheme.schemeId)"> View</button>-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

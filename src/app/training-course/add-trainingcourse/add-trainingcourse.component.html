@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <title>Responsive Registration Form</title>
+        <meta name="viewport" content="width=device-width,
+          initial-scale=1.0"/>
+      </head>
+      <body>
+        <div class="container">
+          <h1 class="form-title">Add Training Course</h1>
+          <form (ngSubmit) = "onSubmit()" [formGroup]="trainingCourseform">
+            <div class="main-user-info">
+              <div class="user-input-box">
+                <label>Training Course ID</label>
+                <input type="text" class ="form-control" id = "trainingCourseId"
+                [(ngModel)] = "trainingCourse.trainingCourseId" name = "trainingCourseId" formControlName="trainingCourseId" [class.is-invalid]="trainingCourseId.invalid && trainingCourseId.touched">
+                <small [class.d-none]="trainingCourseId.valid || trainingCourseId.untouched" class="text-danger">
+                    Training course ID is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Course Name</label>
+                <input type="text"  class ="form-control" id = "courseName"
+                [(ngModel)] = "trainingCourse.courseName" name = "courseName" formControlName="courseName" [class.is-invalid]="courseName.invalid && courseName.touched">
+                <small [class.d-none]="courseName.valid || courseName.untouched" class="text-danger">
+                    Course Name is a required field</small>
+              </div>
+
+              <div class="user-input-box">
+                <label>Course Duration</label>
+                <input type="text"  class ="form-control" id = "courseDuration"
+                [(ngModel)] = "trainingCourse.courseDuration" name = "courseDuration" formControlName="courseDuration" [class.is-invalid]="courseDuration.invalid && courseDuration.touched">
+                <small [class.d-none]="courseDuration.valid || courseDuration.untouched" class="text-danger">
+                    Course Duration is a required field</small>
+              </div>
+              
+              <div class="user-input-box">
+                <label>Start Date</label>
+                <input type="text" class ="form-control" id = "startingDate"
+                [(ngModel)] = "trainingCourse.startingDate" name = "startingDate" formControlName="startingDate" [class.is-invalid]="startingDate.invalid && startingDate.touched">
+                <small [class.d-none]="startingDate.valid || startingDate.untouched" class="text-danger">
+                   Start Date is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>End Date</label>
+                <input type="text" class ="form-control" id = "endingDate"
+                [(ngModel)] = "trainingCourse.endingDate" name = "endingDate" formControlName="endingDate" [class.is-invalid]="endingDate.invalid && endingDate.touched">
+                <small [class.d-none]="endingDate.valid || endingDate.untouched" class="text-danger">
+                    End Date is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Course Completion Status</label>
+                <input type="text" class ="form-control" id = "courseCompletionStatus"
+                [(ngModel)] = "trainingCourse.courseCompletionStatus" name = "courseCompletionStatus" formControlName="courseCompletionStatus" [class.is-invalid]="courseCompletionStatus.invalid && courseCompletionStatus.touched">
+                <small [class.d-none]="courseCompletionStatus.valid || courseCompletionStatus.untouched" class="text-danger">
+                    Status is a required field</small>
+              </div>
+              
+             
+            </div>
+            <div class="form-submit-btn">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </body>
+    </html>

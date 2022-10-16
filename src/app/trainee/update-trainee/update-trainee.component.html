@@ -1,0 +1,133 @@
+<!--<div class="col-md-6 offset-md-3">
+    <h3 style="text-align: center;"> Update Employee </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Ngo Name</label>
+            <input type="text" class ="form-control" id = "ngoName"
+                [(ngModel)] = "ngo.ngoName" name = "ngoName">
+        </div>
+    
+        <div class="form-group">
+            <label> NGO Location</label>
+            <input type="text" class ="form-control" id = "ngoLocation"
+                [(ngModel)] = "ngo.ngoLocation" name = "ngoLocation">
+        </div>
+    
+        <div class="form-group">
+            <label> NGO Type</label>
+            <input type="text" class ="form-control" id = "ngoType"
+                [(ngModel)] = "ngo.ngoType" name = "ngoType">
+        </div>
+
+        <div class="form-group">
+            <label> NGO Motive</label>
+            <input type="text" class ="form-control" id = "ngoMotive"
+                [(ngModel)] = "ngo.ngoMotive" name = "ngoMotive">
+        </div>
+
+        <div class="form-group">
+            <label> Donation</label>
+            <input type="text" class ="form-control" id = "donation"
+                [(ngModel)] = "ngo.donation" name = "donation">
+        </div>
+
+        <div class="form-group">
+            <label> NGO Size</label>
+            <input type="text" class ="form-control" id = "ngoSize"
+                [(ngModel)] = "ngo.ngoSize" name = "ngoSize">
+        </div>
+
+        <div class="form-group">
+            <label> NGO Activities</label>
+            <input type="text" class ="form-control" id = "ngoActivities"
+                [(ngModel)] = "ngo.ngoActivities" name = "ngoActivities">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div>-->
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <title>Responsive form</title>
+        <meta name="viewport" content="width=device-width,
+          initial-scale=1.0"/>
+      </head>
+      <body>
+        <div class="container">
+          <h1 class="form-title">Update NGO</h1>
+          <form (ngSubmit) = "onSubmit()" [formGroup]="traineeform">
+            <div class="main-user-info">
+              <!--<div class="user-input-box">
+                <label>NGO ID</label>
+                <input type="text" class ="form-control" id = "ngoId"
+                [(ngModel)] = "ngo.ngoId" name = "ngoId" formControlName="ngoId">
+    
+              </div>-->
+              <div class="user-input-box">
+                <label>First Name</label>
+                <input type="text" placeholder="Enter Name" class ="form-control" id = "firstName"
+                [(ngModel)] = "trainee.firstName" name = "firstName" formControlName="firstName" [class.is-invalid]="firstName.invalid && firstName.touched">
+                <small [class.d-none]="firstName.valid || firstName.untouched" class="text-danger">
+                    First name is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter Location" class ="form-control" id = "lastName"
+                [(ngModel)] = "trainee.lastName" name = "lastName" formControlName="lastName" [class.is-invalid]="lastName.invalid && lastName.touched">
+                <small [class.d-none]="lastName.valid || lastName.untouched" class="text-danger">
+                    Last name is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Email</label>
+                <input type="text" placeholder="Enter Type of NGO" class ="form-control" id = "email"
+                [(ngModel)] = "trainee.email" name = "email" formControlName="email" [class.is-invalid]="email.invalid && email.touched">
+                <small [class.d-none]="email.valid || email.untouched" class="text-danger">
+                    Email is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Family Info</label>
+                <input type="text" placeholder="Enter motive" class ="form-control" id = "familyInfo"
+                [(ngModel)] = "trainee.familyInfo" name = "familyInfo" formControlName="familyInfo" [class.is-invalid]="familyInfo.invalid && familyInfo.touched">
+                <small [class.d-none]="familyInfo.valid || familyInfo.untouched" class="text-danger">
+                    Family Info is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Location</label>
+                <input type="text" placeholder="Donation" class ="form-control" id = "location"
+                [(ngModel)] = "trainee.location" name = "location" formControlName="location" [class.is-invalid]="location.invalid && location.touched">
+                <small [class.d-none]="location.valid || location.untouched" class="text-danger">
+                    Location is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Contact</label>
+                <input type="text" placeholder="Enter Size of NGO" class ="form-control" id = "contact"
+                [(ngModel)] = "trainee.contact" name = "contact" formControlName="contact" [class.is-invalid]="contact.invalid && contact.touched">
+                <small [class.d-none]="contact.valid || contact.untouched" class="text-danger">
+                    Contact is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label>Aadhar No.</label>
+                <input type="text" name="aadharNo" placeholder="Enter Activities" class ="form-control" id ="aadharNo"
+                [(ngModel)] = "trainee.aadharNo" name ="aadharNo" formControlName="aadharNo">
+                <small [class.d-none]="aadharNo.valid || aadharNo.untouched" class="text-danger" [class.is-invalid]="aadharNo.invalid && aadharNo.touched">
+                    Aadhar number is a required field</small>
+              </div>
+              <div class="user-input-box">
+                <label> Date of birth</label>
+                <input type="text" name="dob" placeholder="Enter Activities" class ="form-control" id ="dob"
+                [(ngModel)] = "trainee.dob" name ="dob" formControlName="dob">
+                <small [class.d-none]="dob.valid || dob.untouched" class="text-danger" [class.is-invalid]="dob.invalid && dob.touched">
+                    Date of birth is a required field</small>
+              </div>
+            </div>
+            <div class="form-submit-btn">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </body>
+    </html>

@@ -1,0 +1,37 @@
+<h2></h2>
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th> Trainee ID</th>
+                <th> First Name </th>
+                <th> Last Location</th>
+                <th> Trainee Email </th>
+                <th> Family Info </th>
+                <th> Location</th>
+                <th> Trainee Contact</th>
+                <th> Trainee Aadhar No.</th>
+                <th> Date of birth</th>
+                <th> Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let trainee of trainees">
+                <td> {{trainee.traineeId}} </td>
+                <td> {{ trainee.firstName }} </td>
+                <td> {{ trainee.lastName }} </td>
+                <td>{{ trainee.email }}</td>
+                <td>{{ trainee.familyInfo }}</td>
+                <td>{{ trainee.location }}</td>
+                <td>{{ trainee.contact }}</td>
+                <td>{{ trainee.aadharNo }}</td>
+                <td>{{ trainee.dob}}</td>
+                <td>
+                    <button class="btn btn-outline-primary" style="border-radius:10px" (click) = "updateTrainee(trainee.traineeId)"> Update</button>
+                    <button class="btn btn-outline-danger" style="margin-left: 10px; border-radius: 10px" (click) = "deleteTrainee(trainee.traineeId)"> Delete</button>
+                    <!--<button class="btn btn-outline-primary" style="margin-left: 10px; border-radius: 10px;" (click)="traineeDetails(trainee.traineeId)"> View</button>-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

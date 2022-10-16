@@ -1,0 +1,54 @@
+
+<!--<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class = "navbar-nav">
+        <li class = "nav-item">
+            <a routerLink="/ngolist" routerLinkActive="active" class="nav-link" >NGO List</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="/addngo" *ngIf="loginServ.isUserLoggedIn()" routerLinkActive="active" class="nav-link" >Add NGO</a>
+        </li>
+    </ul>
+</nav>-->
+<!--<h2 class="text-center"> NGO List</h2>-->
+<h2></h2>
+<div class="container">
+    <div class="form-outline mb-4">
+        <input type="search" class="form-control" placeholder="Search NGO based on location" name="ngoLocation" 
+        [(ngModel)]="ngoLocation" (ngModelChange)="Search()">
+      </div>
+      <div id="datatable">
+      </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th> NGO ID</th>
+                <th> NGO Name </th>
+                <th> NGO Location</th>
+                <th> NGO Type </th>
+                <th> NGO Motive</th>
+                <th> Donation</th>
+                <th> NGO Size</th>
+                <th> NGO Activities</th>
+                <th> Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ngo of ngos | paginate:{itemsPerPage:5, currentPage:p};">
+                <td> {{ngo.ngoId}} </td>
+                <td> {{ ngo.ngoName }} </td>
+                <td> {{ ngo.ngoLocation }} </td>
+                <td>{{ ngo.ngoType }}</td>
+                <td>{{ ngo.ngoMotive }}</td>
+                <td>{{ ngo.donation }}</td>
+                <td>{{ ngo.ngoSize }}</td>
+                <td>{{ ngo.ngoActivities }}</td>
+                <td>
+                    <button class="btn btn-outline-primary" style="border-radius:10px" (click) = "updateNgo(ngo.ngoId)"> Update</button>
+                    <button class="btn btn-outline-danger" style="margin-left: 10px; border-radius: 10px" (click) = "deleteNgo(ngo.ngoId)"> Delete</button>
+                    <!--<button class="btn btn-outline-primary" style="margin-left: 10px; border-radius: 10px;" (click)="ngoDetails(ngo.ngoId)"> View</button>-->
+                </td>
+            </tr>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </tbody>
+    </table>
+</div>
